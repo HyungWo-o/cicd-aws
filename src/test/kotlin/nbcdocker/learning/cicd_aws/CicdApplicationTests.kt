@@ -21,15 +21,15 @@ class CicdApplicationTests {
 	}
 
 	@Test
-	@DisplayName("/healthz 테스트")
+	@DisplayName("/health 테스트")
 	fun testHomeContollerHealthz() {
-		val response: ResponseEntity<String> = template.getForEntity("/healthz", String::class.java)
+		val response: ResponseEntity<String> = template.getForEntity("/health", String::class.java)
 
 		// 실패하는 경우
 //		assertThat(response.body).isEqualTo("on failed")
 
 		// 성공하는 경우
-		assertThat(response.body).isEqualTo("healthz-aws")
+		assertThat(response.body).isEqualTo("health-aws")
 	}
 
 }
