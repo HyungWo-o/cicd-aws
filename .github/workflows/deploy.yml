@@ -43,6 +43,7 @@ jobs:
                 echo "Java 프로세스 발견 (PID: $pid). 정상 종료 시도 중..."
                 kill -15 $pid
             
+            
                 for i in {1..30}; do
                   if ! ps -p $pid > /dev/null; then
                     break
